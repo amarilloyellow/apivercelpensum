@@ -1,6 +1,6 @@
 import express from 'express';
 import { kv } from '@vercel/kv';
-const cors = require('cors');
+import cors from 'cors';
 import { nanoid } from 'nanoid';
 
 
