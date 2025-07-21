@@ -1,8 +1,11 @@
 import express from 'express';
 import { kv } from '@vercel/kv';
+const cors = require('cors');
 import { nanoid } from 'nanoid';
 
+
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Constantes para las claves
