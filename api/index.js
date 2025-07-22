@@ -21,8 +21,8 @@ const ASIGNATURAS_INDEX_KEY = 'index:asignaturas'; // Nuestro nuevo índice
 app.post('/asignaturas', async (req, res) => {
   const { carrera, sem, cod, asig, uc, requisitos } = req.body;
 
-  if (!carrera || !sem || !cod || !asig || !uc) {
-    return res.status(400).json({ error: 'Faltan campos obligatorios.' });
+  if (!carrera || !cod || !asig || req.body.sem === undefined || req.body.uc === undefined) {
+    return res.status(400).json({ error: 'Faltan campos obligatorios: carrera, cod, asig, sem y uc son requeridos.' });
   }
 
   const key = `${ASIGNATURA_PREFIX}${cod}`;
